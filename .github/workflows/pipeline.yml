@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
-
   dockerize:
     needs: build
     runs-on: ubuntu-latest
