@@ -43,8 +43,8 @@ jobs:
       - name: Push Docker image to Docker Hub (or other registry)
         run: |
           echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
-          docker tag your-docker-image-name your-docker-username/your-docker-image-name:latest
-          docker push your-docker-username/your-docker-image-name:latest
+          docker tag $DOCKER_IMAGE $DOCKER_USERNAME/$DOCKER_IMAGE:latest
+          docker push $DOCKER_USERNAME/$DOCKER_IMAGE:latest
 
   deploy:
     if: github.ref == 'refs/heads/main'
