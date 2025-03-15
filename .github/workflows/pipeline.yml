@@ -42,9 +42,8 @@ jobs:
         
       - name: Push Docker image to Docker Hub (or other registry)
         run: |
-          echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
-          docker tag cat-tournament chizuchippu17@gmail.com/cat-tournament:latest
-          docker push chizuchippu17@gmail.com/cat-tournament:latest
+          docker build -t ${{ config.DOCKER_USERNAME }}/cat-tournament:latest .
+          docker push ${{ config.DOCKER_USERNAME }}/cat-tournament:latest
 
   deploy:
     if: github.ref == 'refs/heads/main'
