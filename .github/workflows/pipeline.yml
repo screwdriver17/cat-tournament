@@ -1,4 +1,3 @@
-# CI/CD Pipeline (Node.js)
 name: Node.js CI/CD Pipeline
 
 on:
