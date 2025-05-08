@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
 
   dockerize:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -43,7 +43,7 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: dockerize
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
