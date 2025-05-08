@@ -14,6 +14,6 @@ RUN npm install
 COPY . .
 
 # Привязка порта, который будет использоваться приложением
-EXPOSE 80
+EXPOSE 3000
 
 CMD [ "node", "app.js" ]
