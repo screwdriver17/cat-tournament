@@ -51,4 +51,4 @@ jobs:
       - name: Pull and run Docker container
         run: |
           docker pull ${{ secrets.DOCKER_USERNAME }}/cat-tournament
-          docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/cat-tournament
+          docker run -d -p 8080 ${{ secrets.DOCKER_USERNAME }}/cat-tournament
