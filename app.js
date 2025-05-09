@@ -1,11 +1,13 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const path = require('path');
 const app = express();
-const port = 80;
+const port = 3000;
 
 const API_KEY = 'live_y0ft3BZP8zzKFu97XLJasSCsbjS4ad3r57nPqfHHvRxQY59pLRgxqooDKxa03bBR';
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(express.json());
 
